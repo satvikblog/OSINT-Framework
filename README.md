@@ -19,8 +19,8 @@ Before setting up the tool, ensure that the following prerequisites are met:
 Clone the repository to your local machine using:
 
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/satvikblog/OSINT-Framework.git
+cd OSINT-Framework
 ```
 
 ### 2. Set Up a Virtual Environment
