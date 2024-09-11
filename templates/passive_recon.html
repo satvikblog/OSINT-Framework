@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passive Reconnaissance</title>
+    <style>
+        /* Reset some default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Container for centralizing content */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+
+        /* Heading styling */
+        h1 {
+            color: #00bcd4;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* Form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-size: 1.2rem;
+            color: #b0bec5;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #00bcd4;
+            border-radius: 5px;
+            background: #2c2c2c;
+            color: #e0e0e0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            color: #121212;
+            background-color: #00bcd4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #00a2c2;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            label {
+                font-size: 1rem;
+            }
+
+            input[type="text"] {
+                font-size: 0.9rem;
+            }
+
+            button {
+                font-size: 1rem;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Passive Reconnaissance</h1>
+        <form action="/passive_recon" method="post">
+            <label for="target">Enter Target Domain:</label>
+            <input type="text" id="target" name="target" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+

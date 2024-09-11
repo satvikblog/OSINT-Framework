@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackOps Server</title>
+    <style>
+        /* Reset some default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Container for centralizing content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            text-align: center;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px; /* Add margin between containers */
+        }
+
+        /* Heading styling */
+        h1 {
+            color: #00bcd4;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* Paragraph styling */
+        p {
+            font-size: 1.2rem;
+            color: #b0bec5;
+            margin-bottom: 30px;
+        }
+
+        /* Link styling */
+        a.learn-more {
+            font-size: 1.1rem;
+            color: #00bcd4;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: 2px solid #00bcd4;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
+            display: inline-block;
+        }
+
+        a.learn-more:hover {
+            background-color: #00bcd4;
+            color: #121212;
+            transform: scale(1.05);
+        }
+
+        a.learn-more:active {
+            transform: scale(0.95);
+        }
+
+        /* Navigation links styling */
+        .nav-links {
+            margin-top: 20px;
+        }
+
+        .nav-links a {
+            font-size: 1.1rem;
+            color: #00bcd4;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 2px solid #00bcd4;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .nav-links a:hover {
+            background-color: #00bcd4;
+            color: #121212;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            a.learn-more, .nav-links a {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>An Open Source Intelligence Framework</h1>
+        <h2> Tools Available <h2>
+        <div class="nav-links">
+            <a href="/osint">OSINT</a>
+            <a href="/passive_recon">Passive Recon</a>
+            <a href="/sd_enum">Subdomain Enumeration</a>
+            <a href="/nmap">nmap</a>
+	    <a href="/dnsrecon">Dns Recon</a>
+            <a href="/live_data">Sensor Data </a>
+            <a href="/waf"> Firewall Detector </a>
+        </div>
+        <h3>Additional tools will be available soon. Stay updated by <a href="https://satvik.live">contacting the Developer</a> and sharing your suggestions.</h3>
+    </div>
+</body>
+</html>
+

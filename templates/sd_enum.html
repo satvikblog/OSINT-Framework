@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subdomain Enumeration</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #1e1e1e;
+            color: #dcdcdc;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #2d2d2d;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        h1 {
+            color: #66ccff;
+        }
+        form {
+            margin: 1rem 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #333;
+            border-radius: 4px;
+            background-color: #1e1e1e;
+            color: #dcdcdc;
+        }
+        button {
+            background-color: #66ccff;
+            border: none;
+            color: #1e1e1e;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3399ff;
+        }
+        a {
+            color: #66ccff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Subdomain Enumeration</h1>
+        <form method="post">
+            <label for="domain">Enter Domain:</label>
+            <input type="text" id="domain" name="domain" placeholder="example.com" required>
+            <button type="submit">Enumerate</button>
+        </form>
+    </div>
+</body>
+</html>
+

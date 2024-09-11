@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nmap Port Scan</title>
+    <style>
+        /* Styles from before */
+        body { font-family: 'Courier New', Courier, monospace; background-color: #1e1e1e; color: #dcdcdc; margin: 0; padding: 0; }
+        .container { width: 80%; margin: 0 auto; padding: 2rem; background-color: #2d2d2d; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.5); }
+        h1 { color: #66ccff; }
+        form { margin: 1rem 0; }
+        label { display: block; margin-bottom: 0.5rem; }
+        input[type="text"] { width: 100%; padding: 0.5rem; border: 1px solid #333; border-radius: 4px; background-color: #1e1e1e; color: #dcdcdc; }
+        button { background-color: #66ccff; border: none; color: #1e1e1e; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #3399ff; }
+        a { color: #66ccff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        #progress { display: none; margin-top: 1rem; }
+        #progress-bar { width: 100%; height: 200px; background-color: #1e1e1e; color: #66ccff; padding: 1rem; border-radius: 4px; overflow-y: auto; }
+    </style>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Nmap Port Scan</h1>
+        <form id="scan-form" method="post">
+            <label for="target">Enter Target IP/Domain:</label>
+            <input type="text" id="target" name="target" placeholder="192.168.1.1 or example.com" required>
+            <button type="submit">Start Scan</button>
+        </form>
+        <div id="progress">
+            <div id="progress-bar"></div>
+        </div>
+    </div>
+
+    <script>
+        const socket = io();
+
+        // Handle form submission
+        document.getElementById('scan-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            fetch('/nmap_portscan', {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('progress').style.display = 'block';
+                }
+            });
+        });
+
+        // Listen for progress updates
+        socket.on('progress', function (data) {
+            const progressBar = document.getElementById('progress-bar');
+            progressBar.textContent += data.data;
+            if (data.data.includes('Scan complete')) {
+                document.getElementById('progress').style.display = 'none';
+                progressBar.textContent += '\nScan Complete. Check results at: /nmap_scan_results/' + encodeURIComponent(document.getElementById('target').value);
+            }
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subdomain Results</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #1e1e1e;
+            color: #dcdcdc;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #2d2d2d;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        h1 {
+            color: #66ccff;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 0.5rem;
+            border-bottom: 1px solid #333;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        a {
+            color: #66ccff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Subdomain Results for {{ domain }}</h1>
+        <ul>
+            {% for subdomain in results %}
+                <li>{{ subdomain }}</li>
+            {% endfor %}
+        </ul>
+        <a href="/sd_enum">Back</a>
+    </div>
+</body>
+</html>
+

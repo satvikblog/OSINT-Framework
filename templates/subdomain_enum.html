@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subdomain Enumeration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Subdomain Enumeration</h1>
+        <form action="/subdomain_enum_results" method="get">
+            <label for="domain">Enter Domain:</label>
+            <input type="text" id="domain" name="domain" placeholder="example.com" required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</body>
+</html>
+

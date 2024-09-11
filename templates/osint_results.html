@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OSINT Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222; /* Dark background for the whole page */
+            color: #ddd; /* Light text color for general text */
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #333; /* Darker background for tables */
+        }
+        table, th, td {
+            border: 1px solid #444; /* Dark grey border */
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            color: #ddd; /* Light text color for data */
+        }
+        th {
+            background-color: #444; /* Dark grey background for header cells */
+            color: #fff; /* White text color for headers */
+        }
+        h1 {
+            text-align: center;
+            color: #fff; /* White text color for the header */
+        }
+        h2 {
+            color: #28a745; /* Green color for section headers */
+        }
+        .map {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #444;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>OSINT Results for {{ result['whois_info']['domain'] or result['ip_location']['ip'] }}</h1>
+
+
+    <h2>WHOIS Info</h2>
+    <table>
+        <tr>
+            <th>Domain</th>
+            <td>{{ result['whois_info']['domain'] }}</td>
+        </tr>
+        <tr>
+            <th>Registrar</th>
+            <td>{{ result['whois_info']['registrar'] }}</td>
+        </tr>
+        <tr>
+            <th>Creation Date</th>
+            <td>{{ result['whois_info']['creation_date'] }}</td>
+        </tr>
+        <tr>
+            <th>Expiration Date</th>
+            <td>{{ result['whois_info']['expiration_date'] }}</td>
+        </tr>
+        <tr>
+            <th>Registrant Name</th>
+            <td>{{ result['whois_info']['registrant_name'] }}</td>
+        </tr>
+        <tr>
+            <th>Registrant Email</th>
+            <td>{{ result['whois_info']['registrant_email'] }}</td>
+        </tr>
+    </table>
+
+    <h2>IP Location Info</h2>
+    <table>
+        <tr>
+            <th>IP</th>
+            <td>{{ result['ip_location']['ip'] }}</td>
+        </tr>
+        <tr>
+            <th>Country</th>
+            <td>{{ result['ip_location']['country'] }}</td>
+        </tr>
+        <tr>
+            <th>City</th>
+            <td>{{ result['ip_location']['city'] }}</td>
+        </tr>
+        <tr>
+            <th>ISP</th>
+            <td>{{ result['ip_location']['isp'] }}</td>
+        </tr>
+    </table>
+
+<h2>DNS Info</h2>
+<table>
+    <tr>
+        <th>A Records (IP Addresses)</th>
+        <td>{{ result['dns_info_a'] }}</td>
+    </tr>
+    <tr>
+        <th>MX Records (Mail Exchange)</th>
+        <td>{{ result['dns_info_mx'] }}</td>
+    </tr>
+    <tr>
+        <th>NS Records (Name Servers)</th>
+        <td>{{ result['dns_info_ns'] }}</td>
+    </tr>
+    <tr>
+        <th>TXT Records (Text Records)</th>
+        <td>{{ result['dns_info_txt'] }}</td>
+    </tr>
+</table>
+
+
+    {% if result['map'] %}
+    <h2>Location Map</h2>
+    <img class="map" src="data:image/png;base64,{{ result['map'] }}" alt="Map">
+    {% endif %}
+</body>
+</html>

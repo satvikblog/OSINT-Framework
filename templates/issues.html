@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems We Are Solving</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background: #1e1e1e;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            margin-bottom: 40px; /* Space between sections */
+        }
+
+        h1 {
+            color: #00bcd4;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .problem-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .problem-item {
+            background: #1e1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            max-width: 300px;
+            flex: 1 1 calc(33.333% - 40px); /* Adjust the width as needed */
+            box-sizing: border-box;
+        }
+
+        .problem-item h2 {
+            color: #00bcd4;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .problem-item p {
+            font-size: 1rem;
+            color: #b0bec5;
+        }
+
+        @media (max-width: 768px) {
+            .problem-item {
+                flex: 1 1 calc(50% - 40px); /* Two problems per row on medium screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .problem-item {
+                flex: 1 1 100%; /* One problem per row on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Problems We Are Solving</h1>
+        <div class="problem-list">
+            <div class="problem-item">
+                <h2>Problem 1</h2>
+                <p>Brief description of Problem 1 and its impact.</p>
+            </div>
+            <div class="problem-item">
+                <h2>Problem 2</h2>
+                <p>Brief description of Problem 2 and its impact.</p>
+            </div>
+            <div class="problem-item">
+                <h2>Problem 3</h2>
+                <p>Brief description of Problem 3 and its impact.</p>
+            </div>
+            <div class="problem-item">
+                <h2>Problem 4</h2>
+                <p>Brief description of Problem 4 and its impact.</p>
+            </div>
+            <div class="problem-item">
+                <h2>Problem 5</h2>
+                <p>Brief description of Problem 5 and its impact.</p>
+            </div>
+            <div class="problem-item">
+                <h2>Problem 6</h2>
+                <p>Brief description of Problem 6 and its impact.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
