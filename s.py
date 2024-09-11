@@ -267,6 +267,31 @@ def live_data():
         print(f"Error processing data: {e}")
         return jsonify({"error": "Error processing data"}), 500
 
+@app.route('/')
+def index():
+    # Read comments from the file
+    comments = []
+    if os.path.exists('comments.txt'):
+        with open('comments.txt', 'r') as file:
+            comments = file.readlines()
+    
+    return render_template('index.html', comments=comments)
+
+# Route to handle comment submissions
+@app.route('/submit_comment', methods=['POST'])
+def submit_comment():
+    comment = request.form['comment']
+    
+    # Append the comment to a local file
+    with open('comments.txt', 'a') as file:
+        file.write(f'{comment}\n')
+    
+    # Commit and push the comment file to your Git repository
+    subprocess.call(['git', 'add', 'comments.txt'])
+    subprocess.call(['git', 'commit', '-m', 'Added new comment'])
+    subprocess.call(['git', 'push'])
+    
+    return redirect('/')
 @app.route('/sd_enum', methods=['GET', 'POST'])
 def sd_enum():
     if request.method == 'POST':
