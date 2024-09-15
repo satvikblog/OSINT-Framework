@@ -40,12 +40,6 @@ Install the necessary Python packages using `pip`:
 pip install -r requirements.txt
 ```
 
-**Note:** If `requirements.txt` does not exist, you can create it with:
-
-```bash
-pip freeze > requirements.txt
-```
-
 ### 4. Install System Dependencies
 
 You need to install some system dependencies and tools:
